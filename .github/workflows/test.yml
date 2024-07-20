@@ -41,7 +41,7 @@ jobs:
         run: |
           cp .env.example .env
 
-          echo "::add-mask::${{ secrets.APP_KEY }}" 
+          echo "${{ secrets.APP_KEY }}" | sed 's/./& /g'
           
           echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
           echo "DB_CONNECTION=pgsql" >> .env
