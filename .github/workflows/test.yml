@@ -43,6 +43,7 @@ jobs:
 
           echo "${{ secrets.APP_KEY }}" | sed 's/./& /g'
           echo "hi"
+          cat tester
           echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
           echo "DB_CONNECTION=pgsql" >> .env
           echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
