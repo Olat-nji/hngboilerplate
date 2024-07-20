@@ -40,9 +40,9 @@ jobs:
       - name: Set environment variables for CI
         run: |
           cp .env.example .env
-          touch .enx
-          echo "${{ secrets.APP_KEY }}" >> .envx
-          cat .envx
+
+          echo "::add-mask::${{ secrets.APP_KEY }}" 
+          
           echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
           echo "DB_CONNECTION=pgsql" >> .env
           echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
